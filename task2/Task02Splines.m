@@ -35,8 +35,8 @@ dqr1 = polyder(qr1);
 ddqr1 = polyder(dqr1);
 
 %%
-dq2 = polyval(dqr1, tm); dq3 = polyval(ddqr1, tm);
-q_des2 = [q2 q3 dq2 dq2 dq3 ddq3]';
+dq2 = polyval(dqr1, tm); ddq2 = polyval(ddqr1, tm);
+q_des2 = [q2 q3 dq2 dq3 ddq2 ddq3]';
 
 %Polynomial 2 
 P2 = [1, t, t^2, t^3, t^4, t^5];
@@ -74,7 +74,7 @@ plot(qr,'b',  'LineWidth', 2)
 xlabel('Time of moving')
 ylabel('Trajectory')
 legend('q_{pol}', 'Fontsize', 10)
-title('Trajectory polynomial')
+title('Trajectory splines')
 grid on
 
 
@@ -83,7 +83,7 @@ plot(dqr,'g', 'LineWidth', 2)
 xlabel('Time of moving')
 ylabel('Velocity ')
 legend('dq_{pol}', 'Fontsize', 10)
-title('Velocity polynomial')
+title('Velocity splines')
 grid on
 
 figure(3);
@@ -91,5 +91,5 @@ plot(ddqr, 'r', 'LineWidth', 2)
 xlabel('Time of moving')
 ylabel('Acceleration ')
 legend('ddq_{pol}', 'Fontsize', 10)
-title('Acceleration polynomial')
+title('Acceleration splins')
 grid on
